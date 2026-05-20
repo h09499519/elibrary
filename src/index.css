@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #0B2D4D;
+  --color-accent: #FF6D01;
+  --color-warm-white: #F8F7F4;
+  --color-light-cream: #FBF7EF;
+  --color-charcoal: #2A2A2A;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-warm-white text-charcoal font-sans antialiased transition-colors duration-300;
+  }
+
+  /* Manual Dark Mode logic for Tailwind 4 if needed, but standard dark: should work */
+  .dark body {
+    @apply bg-transparent text-warm-white;
+  }
+}
+
+.markdown-body {
+  @apply prose prose-slate max-w-none;
+}
